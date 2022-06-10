@@ -110,13 +110,13 @@ open class DatePickerDialog: UIView {
         guard let appDelegate = UIApplication.shared.delegate else { fatalError() }
         guard let window = appDelegate.window else { fatalError() }
         window?.addSubview(self)
-        window?.bringSubviewToFront(self)
+        window?.bringSubview(toFront: self)
         window?.endEditing(true)
 
         NotificationCenter.default.addObserver(
             self,
             selector: .deviceOrientationDidChange,
-            name: UIDevice.orientationDidChangeNotification, object: nil
+            name: UIDevice.NSNotification.Name.UIDeviceOrientationDidChange, object: nil
         )
 
         /* Anim */
